@@ -2,8 +2,10 @@ package protocol;
 
 import io.netty.buffer.ByteBuf;
 import protocol.request.LoginRequestPacket;
+import protocol.request.LogoutRequestPacket;
 import protocol.request.MessageRequestPacket;
 import protocol.response.LoginResponsePacket;
+import protocol.response.LogoutResponsePacket;
 import protocol.response.MessageResponsePacket;
 import serialize.Serializer;
 import serialize.impl.JSONSerializer;
@@ -28,6 +30,9 @@ public class PacketCodeC {
         packetTypeMap.put(LOGIN_RESPONSE, LoginResponsePacket.class);
         packetTypeMap.put(MESSAGE_REQUEST, MessageRequestPacket.class);
         packetTypeMap.put(MESSAGE_RESPONSE, MessageResponsePacket.class);
+        packetTypeMap.put(LOGOUT_REQUEST, LogoutRequestPacket.class);
+        packetTypeMap.put(LOGOUT_RESPONSE, LogoutResponsePacket.class);
+
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JSONSerializer();
